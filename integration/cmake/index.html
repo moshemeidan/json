@@ -37,15 +37,8 @@
 
 <span class=nb>include</span><span class=p>(</span><span class=s>FetchContent</span><span class=p>)</span>
 
-<span class=nb>FetchContent_Declare</span><span class=p>(</span><span class=s>json</span>
-    <span class=s>URL</span> <span class=s>https://github.com/nlohmann/json/releases/download/v3.10.5/json.tar.xz</span>
-<span class=p>)</span>
-
-<span class=nb>FetchContent_GetProperties</span><span class=p>(</span><span class=s>json</span><span class=p>)</span>
-<span class=nb>if</span><span class=p>(</span><span class=s>NOT</span> <span class=s>json_POPULATED</span><span class=p>)</span>
-    <span class=nb>FetchContent_Populate</span><span class=p>(</span><span class=s>json</span><span class=p>)</span>
-    <span class=nb>add_subdirectory</span><span class=p>(</span><span class=o>${</span><span class=nv>json_SOURCE_DIR</span><span class=o>}</span> <span class=o>${</span><span class=nv>json_BINARY_DIR</span><span class=o>}</span> <span class=s>EXCLUDE_FROM_ALL</span><span class=p>)</span>
-<span class=nb>endif</span><span class=p>()</span>
+<span class=nb>FetchContent_Declare</span><span class=p>(</span><span class=s>json</span> <span class=s>URL</span> <span class=s>https://github.com/nlohmann/json/releases/download/v3.10.5/json.tar.xz</span><span class=p>)</span>
+<span class=nb>FetchContent_MakeAvailable</span><span class=p>(</span><span class=s>json</span><span class=p>)</span>
 
 <span class=nb>add_executable</span><span class=p>(</span><span class=s>example</span> <span class=s>example.cpp</span><span class=p>)</span>
 <span class=nb>target_link_libraries</span><span class=p>(</span><span class=s>example</span> <span class=s>PRIVATE</span> <span class=s>nlohmann_json::nlohmann_json</span><span class=p>)</span>
